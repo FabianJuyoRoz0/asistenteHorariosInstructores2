@@ -1,12 +1,15 @@
 from django.http import request
 from django.shortcuts import render
-from app1.models import Instructores, Contratacion
-import csv, io
-from django.contrib import messages
-from datetime import date, datetime
+from app1.models import Instructores
+from django.http.response import HttpResponse
 
 def listaInstructores(request):
     template = "listarInstructor.html"
-   
-    return render(request, template) 
+    nombre = request.GET["Nombre"] 
+    if nombre:
+        instructores = Instructores.objects.filter(Nombre = nombre)   
+        return render(request, template, {'instructores':instructores}) 
+    else:
+        return HttpResponse('error')
+
 
