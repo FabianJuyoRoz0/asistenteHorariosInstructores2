@@ -11,9 +11,14 @@
     margin-right: 7px;
 }
 
-.formularioupload{
+.formularioupload1{
     margin-top: 70px;
     margin-left: 500px;
+}
+
+
+.formularioupload{
+    margin-left: 240px;
 }
 
 h1 {
@@ -25,6 +30,8 @@ h1 {
 .table {
     width: 70%;
     border: 1px solid #000;
+    margin-right: 120%;
+
  }
  th, td {
     width: 25%;

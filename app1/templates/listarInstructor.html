@@ -10,7 +10,7 @@
     <title>Listar Instructores</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 </head>
 
 <body>
@@ -29,8 +29,8 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/CargarBDinicial/">Cargar BD Instructores</a>
-                    <a class="dropdown-item" href="/CargarInstructor/">Cargar Instructor</a>
-                    <a class="dropdown-item" href="/ListarInstructor/">Listar Instructores</a>
+                    <a class="dropdown-item" href="/CargarInstructor/">Buscar Instructor</a>
+                    <a class="dropdown-item" href="/ListarInstructor/?NumeroDocumento=&Apellido=&Nombre=&TipoDocumento=&numeroCelular=&Fecha_Inicio=">Listar Instructores</a>
                   </li>
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -152,51 +152,14 @@
                 <td>2022-01-11</td>
                 <td>Pedro Buitrago</td>
                 <td>160</td>
-                <td><a href="#" v>Editar</a></td>
+                <td><a href="#" class="btn btn-success">Editar</a></td>
                 <td><a href="#" class="btn btn-danger">Eliminar</a></td>
           {% endfor %}  
             </tr>
-        {% endif %}
-            <tr>
-                <td>1</td>
-                <td>Carlos</td>
-                <td>Guitierrez</td>
-                <td>5545455</td>
-                <td>Cedula de ciudadania</td>
-                <td>2022-01-02</td>
-                <td>2022-01-11</td>
-                <td>Pedro Buitrago</td>
-                <td>160</td>
-                <td><a href="#" class="btn btn-success">Editar</a></td>
-                <td><a href="#" class="btn btn-danger">Eliminar</a></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Fabian</td>
-                <td>Rozo</td>
-                <td>5545455</td>
-                <td>Cedula de ciudadania</td>
-                <td>2022-01-02</td>
-                <td>2022-01-11</td>
-                <td>Pedro Buitrago</td>
-                <td>160</td>
-                <td><a href="#" class="btn btn-success">Editar</a></td>
-                <td><a href="#" class="btn btn-danger">Eliminar</a></td>
-            </tr>
+        {% endif %}           
         </tbody>
     </table>
-    <h2>{{diccionario}}</h2>
-    <h2>{{instructores}}</h2>
-    <ul>
-    {% if instructores %}
-      <h3>Cantidad: {{instructores|length}}</h3>
-      {% for i in instructores %}
-      <li>
-        {{ i.correoElectronico }} {{ i.Apellido }} 
-      </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    
 </div>
 </div>
 </div>

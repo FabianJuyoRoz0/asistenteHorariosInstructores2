@@ -30,8 +30,8 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="/CargarBDinicial/">Cargar BD Instructores</a>
-                    <a class="dropdown-item" href="/CargarInstructor/">Cargar Instructor</a>
-                    <a class="dropdown-item" href="/ListarInstructor/">Listar Instructores</a>
+                    <a class="dropdown-item" href="/CargarInstructor/">Buscar Instructor</a>
+                    <a class="dropdown-item" href="/ListarInstructor/?NumeroDocumento=&Apellido=&Nombre=&TipoDocumento=&numeroCelular=&Fecha_Inicio=">Listar Instructores</a>
                   </li>
                   <li class="nav-item dropdown">
                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,7 +68,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
 
-<div class="formularioupload">
+<div class="formularioupload1">
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <label for="file1"> <h4>Ingrese el archivo con los instructores</h4></label>
