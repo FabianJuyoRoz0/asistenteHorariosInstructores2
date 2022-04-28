@@ -76,29 +76,30 @@
   <form action="/ListarInstructor/" method="GET">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputText4">Nombre</label>
-        <input type="text" class="form-control" id="inputText4" placeholder="Escriba su nombre..." name="Nombre">
+        <label for="NumeroDocumento">Numero de documento</label>
+        <input type="text" class="form-control" id="NumeroDocumento" placeholder="Escriba su nombre..." name="NumeroDocumento">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputText4">Apellido</label>
-        <input type="text" class="form-control" id="inputText4" placeholder="Escriba su apellido" name="Apellido">
+        <label for="inputApellido">Apellido</label>
+        <input type="text" class="form-control" id="inputApellido" placeholder="Escriba su apellido" name="Apellido">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputText4">Numero de documento</label>
-        <input type="text" class="form-control" id="inputText4" placeholder="Escriba su numero de documento">
+        <label for="Nombre">Nombre</label>
+        <input type="text" class="form-control" id="Nombre" placeholder="Escriba su numero de documento" name="Nombre">
       </div>
       <div class="form-group col-md-6">
         <label for="inputState">Tipo de documento</label>
-        <select id="inputState" class="form-control">
-          <option selected>Cedula de ciudadania</option>
-          <option>Cedula de extranjeria</option>
+        <select id="inputState" class="form-control" name="TipoDocumento">
+          <option selected></option>
+          <option selected>CC</option>
+          <option>CE</option>
         </select>
     </div>
 
 
     <div class="form-group col-md-6">
       <label for="inputText4">Telefono</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="Escriba su numero de telefono">
+      <input type="text" class="form-control" id="inputText4" placeholder="Escriba su numero de telefono" name="numeroCelular">
     </div>
 
 
@@ -112,7 +113,7 @@
 
     <div class="form-group col-md-6">
       <label for="inputText4">Fecha Inicio</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="2022/30/02">
+      <input type="date" class="form-control" id="inputText4" placeholder="2022/30/02" name="Fecha_Inicio">
     </div>
     <div class="form-group col-md-6">
       <label for="inputText4">Fecha Fin</label>
