@@ -24,19 +24,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Cargar Instructores
-                   </a>
-                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                     <a class="dropdown-item" href="/CargarBDinicial/">Cargar BD Instructores</a>
-                     <a class="dropdown-item" href="/CargarInstructor/">Buscar Instructor</a>
-                     <a class="dropdown-item" href="/ListarInstructor/?NumeroDocumento=&Apellido=&Nombre=&TipoDocumento=&numeroCelular=&Fecha_Inicio=">Listar Instructores</a>
-                   </li>
-                   <li class="nav-item">
-                     <a class="nav-link" href="/cargarXMLS/">Cargar Excel</a>
-                   </li>      
-             </ul>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cargar Instructores
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/CargarBDinicial/">Cargar BD Instructores</a>
+                    <a class="dropdown-item" href="/CargarInstructor/">Buscar Instructor</a>
+                    <a class="dropdown-item" href="/ListarInstructor/?NumeroDocumento=&Apellido=&Nombre=&TipoDocumento=&numeroCelular=&Fecha_Inicio=">Listar Instructores</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cargarXMLS/">Cargar Excel</a>
+                  </li>      
+            </ul>
         </div>
     </nav>
     <div class="container py-4">
@@ -54,13 +55,13 @@
 <div class="container-sm" style="text-align: center;">
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <label for="file1"> <h4>Ingrese el archivo con los instructores</h4></label>
+        <label for="file1"> <h4>Ingrese el archivo Excel</h4></label>
         <br>
         <br>
         <input type="file" class="btn btn-secondary" id="file1" name="file" >
         <br>
         <br>
-        <small>Solo ingrese archivos con extensión .csv</small>
+        <small>Solo ingrese archivos con extensión .xmls</small>
         <br>
         <br>
         <button type="submit" class="btn btn-success" id="botoncargar">Cargar</button>

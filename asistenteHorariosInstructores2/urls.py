@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.FuncSprint1 import instructor,cargarInstructorUnico,listarInstructor,Sena11
+from app1.FuncSprint1 import instructor,cargarInstructorUnico,listarInstructor,Sena11,cargarDocumentoExcel
+from app1.FuncSprint1.cargarDocumentoExcel import cargarExcel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('CargarBDinicial/', instructor.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
     path('ListarInstructor/', listarInstructor.listaInstructores),
-    path('HorarioYHoras/', Sena11.HorararioHora)
+    path('HorarioYHoras/', Sena11.HorararioHora),
+    path('cargarXMLS/', cargarDocumentoExcel.cargarExcel)
 ]
