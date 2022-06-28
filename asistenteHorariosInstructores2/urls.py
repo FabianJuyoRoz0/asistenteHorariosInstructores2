@@ -20,9 +20,10 @@ from app1.FuncSprint1.cargarDocumentoExcel import cargarExcel
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('CargarBDinicial/', instructor.cargarBDinicial),
+    path('CargarBDinicial/', instructor.instructorPrueba.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
     path('ListarInstructor/', listarInstructor.listaInstructores),
     path('HorarioYHoras/', Sena11.HorararioHora),
-    path('cargarXMLS/', cargarDocumentoExcel.cargarExcel)
+    path('cargarXMLS/', cargarDocumentoExcel.cargarExcel),
+    path('EditarInstructor/', instructor.instructorPrueba.editarInstructor, name='editarInstructor'),
 ]

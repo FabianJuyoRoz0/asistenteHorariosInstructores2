@@ -1,14 +1,11 @@
-from openpyxl import load_workbook
+import xml.etree.ElementTree as ET
 
-excel = load_workbook("C:/Users/FABIAN/Documents/GitHub/asistenteHorariosInstructores2/FINAL BANIN.xlsx")
+archivo_xml= ET.parse('C:/Users/FABIAN/Documents/GitHub/asistenteHorariosInstructores2/PE-04_1.xml')
 
-hoja1 = excel['REGULAR']
+raiz = archivo_xml.getroot()
 
-filas = hoja1.rows
-columnas= hoja1.columns
+print(raiz)
 
-
-
-instructores = [cell.value for cell in next (columnas)]
-
-print(instructores)
+for i in raiz.findall('./Data'):
+    print(i)
+    print(i.text.encode('utf8'))
