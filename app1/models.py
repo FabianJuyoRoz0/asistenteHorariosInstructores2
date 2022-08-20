@@ -18,3 +18,10 @@ class Contratacion(models.Model):
     id_Instructor = models.ForeignKey(Instructores, null=True, on_delete=models.CASCADE)
     horasMensualFormacion = models.IntegerField(null=True)
     supervisora = models.CharField(max_length=50, null=True)
+
+class fichasCaracterizacion(models.Model):
+    ficha= models.CharField(max_length=10)
+    FechaInicioEtapaLectiva= models.DateField()
+    FechaFinEtapaLectiva= models.DateField()
+    Jornada= models.CharField(max_length=10)
+    CantidadAprendices= models.IntegerField()
