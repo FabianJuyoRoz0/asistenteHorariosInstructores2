@@ -1,0 +1,36 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" >
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link  rel="stylesheet" href="{% static 'css/inicioSesion.css'%}">
+    <title>Cargar BD Instructores</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <div class="fadeIn first">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL2ajrhiKtmwAS62CIS-7dDdTKzFHkj9kdlevoY-A&s">
+      
+        </div>
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
+       
+          <a href="/CargarBDinicial/" class="btn btn-success">
+            <button class="btn btn-success">Ingresar</button>
+          </a>
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}">
+
+  </body>
+
+</html>
