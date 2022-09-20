@@ -20,10 +20,10 @@ from app1.FuncSprint1 import inicioSesion, instructor,cargarInstructorUnico,list
 urlpatterns = [
     path('inicio/', inicioSesion.inicioSesion),
     path('admin/', admin.site.urls),
-    path('CargarBDinicial/', instructor.instructorPrueba.cargarBDinicial),
+    path('CargarBDinicial/', instructor.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
     path('ListarInstructor/', listarInstructor.listaInstructores),
-    path('EditarInstructor/', instructor.instructorPrueba.editarInstructor, name='editarInstructor'),
+    path('ditarInstrucEtor/', instructor.editarInstructor, name='editarInstructor'),
     path('CargarFichas/', cargarFichas.cargarFichasBD),
     path('CargarSemaforo/', cargarSemaforo.cargarSemaforoBD),
     path('CargarProgramas/', cargarProgramasFormacion.cargarProgramasBD),

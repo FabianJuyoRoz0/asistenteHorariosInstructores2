@@ -12,6 +12,7 @@ class Instructores(models.Model):
     correoElectronico = models.EmailField(max_length = 254)
     numeroCelular = models.CharField(max_length=10)
 
+
 class Contratacion(models.Model):
     Fecha_Inicio = models.DateField()  
     Fecha_Fin = models.DateField() 
