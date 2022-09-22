@@ -1,0 +1,59 @@
+﻿Gestión de sprints
+
+
+
+
+Documentación
+
+
+
+
+Repositorio
+https://github.com/FabianJuyoRoz0/asistenteHorariosInstructores2
+
+
+Diagrama de clases
+https://lucid.app/lucidchart/cf2a4d3d-1f4b-442a-8bd7-59f95d6aa3ae/edit?page=0_0# 
+
+
+Modelo Entidad Relación
+https://lucid.app/lucidchart/c98012bf-c38b-4fa9-8d6f-0c2a34462450/edit?shared=true&page=0_0#
+
+
+Diagrama de secuencia
+https://lucid.app/lucidchart/969e76e0-3048-457e-b9c1-f89f594ae5bf/edit?invitationId=inv_a1e43c56-fd73-48d7-b22a-a91e5d98ff24&page=UHu5FSGOwv1a#
+
+
+Casos de uso
+https://lucid.app/lucidchart/969e76e0-3048-457e-b9c1-f89f594ae5bf/edit?invitationId=inv_a1e43c56-fd73-48d7-b22a-a91e5d98ff24&page=0_0#
+
+
+
+
+
+
+
+
+                                Fechas definidas para cada sprint
+
+
+
+
+Número Sprint 
+	Fecha Inicio
+	Fecha Fin
+	Sprint 1
+	29 de agosto 
+	12 de septiembre
+	Sprint 2
+	12 de septiembre 
+	26 de septiembre
+	Sprint 3
+	26 de septiembre
+	10 de octubre  
+	Sprint 4
+	10 de octubre 
+	31 de octubre
+	Sprint 5
+	31 de octubre
+	15  de noviembre
