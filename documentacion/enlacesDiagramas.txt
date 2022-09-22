@@ -13,7 +13,7 @@ https://github.com/FabianJuyoRoz0/asistenteHorariosInstructores2
 
 
 Diagrama de clases
-https://lucid.app/lucidchart/cf2a4d3d-1f4b-442a-8bd7-59f95d6aa3ae/edit?page=0_0# 
+https://lucid.app/lucidchart/969e76e0-3048-457e-b9c1-f89f594ae5bf/edit?invitationId=inv_a1e43c56-fd73-48d7-b22a-a91e5d98ff24&page=fj83KAQwxpvU#
 
 
 Modelo Entidad Relación
