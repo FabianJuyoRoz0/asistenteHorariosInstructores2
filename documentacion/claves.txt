@@ -1,11 +1,11 @@
 correo institucional para las novedades del proyecto
 
-proyecto392@gmail.com
+usuario: proyecto392@gmail.com
 password: adsi5714
 
 usuarios para inicio de sesion
--apoyo1
+usuario: apoyo1
 password: sena12345
 
--coordinador
+usuario: coordinador
 password: proyecto0932
