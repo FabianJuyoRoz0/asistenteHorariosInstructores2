@@ -23,10 +23,10 @@ urlpatterns = [
     path('CargarBDinicial/', instructor.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
     path('ListarInstructor/', listarInstructor.listaInstructores),
-    path('ditarInstrucEtor/', instructor.editarInstructor, name='editarInstructor'),
+    path('EditarInstructor/', instructor.editarInstructor),
     path('CargarFichas/', cargarFichas.cargarFichasBD),
     path('CargarSemaforo/', cargarSemaforo.cargarSemaforoBD),
     path('CargarProgramas/', cargarProgramasFormacion.cargarProgramasBD),
-    path('HorasInstructor/', HorasInstructor.consultaHoras),
-    path('AlertaFinalizacion/', alertaFinalizacion.alertayfinalizacion)
+    path('HorasInstructor/', HorasInstructor.obtenerHoras),
+    path('AlertaFinalizacion/<int:id>/', alertaFinalizacion.alertayfinalizacion)
 ]

@@ -4,7 +4,7 @@ class Catalogo_Perfiles(models.Model):
     Perfil = models.CharField(max_length=30)
 
 class Instructores(models.Model):
-    NumeroDocumento = models.CharField(max_length=20)
+    NumeroDocumento = models.CharField(max_length=20, unique=True)
     TipoDocumento = models.CharField(max_length=2)  
     Nombre = models.CharField(max_length=50)
     Apellido = models.CharField(max_length=50)
@@ -21,7 +21,7 @@ class Contratacion(models.Model):
     supervisora = models.CharField(max_length=50, null=True)
 
 class fichasCaracterizacion(models.Model):
-    ficha= models.CharField(max_length=10)
+    ficha= models.CharField(max_length=10, unique=True)
     FechaInicioEtapaLectiva= models.DateField()
     FechaFinEtapaLectiva= models.DateField()
     Jornada= models.CharField(max_length=10)
