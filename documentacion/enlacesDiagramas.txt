@@ -1,13 +1,5 @@
 ﻿Gestión de sprints
 
-
-
-
-Documentación
-
-
-
-
 Repositorio
 https://github.com/FabianJuyoRoz0/asistenteHorariosInstructores2
 
