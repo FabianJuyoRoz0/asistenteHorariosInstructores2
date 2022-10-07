@@ -1,3 +1,4 @@
+from socket import fromfd
 from django.contrib import admin
-
-# Register your models here.
+from app1.models import Instructores
+admin.site.register(Instructores)

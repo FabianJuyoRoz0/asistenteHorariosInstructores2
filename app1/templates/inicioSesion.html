@@ -13,21 +13,19 @@
 </head>
 <body>
     <div class="wrapper fadeInDown">
-      <div id="formContent">
+      <form method="post" id="formContent">
+        {% csrf_token %}
         <div class="fadeIn first">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL2ajrhiKtmwAS62CIS-7dDdTKzFHkj9kdlevoY-A&s">
       
         </div>
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
-       
-          <a href="/CargarBDinicial/" class="btn btn-success">
-            <button class="btn btn-success">Ingresar</button>
-          </a>
+          <input type="text" id="username" class="fadeIn second" name="username" placeholder="usuario">
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="contraseña">
+          <button class="btn btn-success" type="submit" value="Login">Ingresar</button>
         <div id="formFooter">
           <a class="underlineHover" href="#">Forgot Password?</a>
         </div>
-      </div>
+      </form>
     </div>
      <script src="{% static 'bootstrap/js/bootstrap.min.js' %}">
 
