@@ -1,6 +1,8 @@
+from pickle import GET
+from django.db import IntegrityError
 from django.http import request
-from django.shortcuts import render
-from app1.models import Instructores, Contratacion
+from django.shortcuts import get_object_or_404, render
+from app1.models import Instructores
 import csv, io
 from django.contrib import messages
 from datetime import date, datetime
@@ -8,37 +10,74 @@ from datetime import date, datetime
 
 def cargarBDinicial(request):
     template = "CargarBD.html"
-    prompt = {'order': 'El orden del archivo .csv debe ser nombre, apellido, número de documento, fecha de inicio contrato, fecha fin contrato, supervisor (a), horas mensuales para impartir formación, correo electrónico, teléfono, profesión'}
-    render(request, template) 
-    if request.method == "GET":
-        return render(request, template)
-    ctx = {}
-    csv_file = request.FILES['file']
-    if not csv_file.name.endswith('.csv'):
-        messages.error(request, 'THIS IS NOT A CSV FILE')
-    data_set = csv_file.read().decode('UTF-8')
-    io_string = io.StringIO(data_set)
-    next(io_string)
-    for column in csv.reader(io_string, delimiter=',', quotechar="|"):
-        Instructores.objects.update_or_create(
-            Nombre = column[0],
-            Apellido = column[1],
-            TipoDocumento = column[2],
-            NumeroDocumento = column[3],
-            correoElectronico = column[8],
-            numeroCelular = column[9],
-            )
-        Contratacion.objects.update_or_create(
-            Fecha_Inicio = datetime.strptime(column[4], '%Y-%m-%d'),
-            Fecha_Fin = datetime.strptime(column[5], '%Y-%m-%d'),
-            supervisora = column[6],
-            id_Instructor = Instructores.objects.filter(NumeroDocumento = column[3])[0],
-            horasMensualFormacion = column[7]
-            )
-        return render(request, template) 
+    aviso=[]
+    prompt = 'Ingrese el archivo .csv'
+    prompt2= 'Instructores repetidos: '
+    render(request, template, {'prompt':prompt}) 
+    #Validacion
+    if request.method=="POST":
+        prompt="El archivo no era de extension .csv o tenia diferente estructura"
+        prompt2="Instructores repetidos: "
+        csv_file = request.FILES['file']
+        if csv_file.name.endswith('.csv'):
+            data_set = csv_file.read().decode('UTF-8')
+            io_string = io.StringIO(data_set)
+            for row in csv.reader(io_string, delimiter=',', quotechar="|"):
+                if 'Nombre' in row[0] and 'Apellido' in row[1] and 'Tipo de documento' in row[2] and 'Numero de identificacion' in row[3] and 'Fecha Inicio' in row[4] and 'Fecha Fin' in row[5] and 'Supervisor' in row[6] and 'Horas mensuales' in row[7] and 'Correo electrónico' in row[8] and 'Número celular' in row[9] and 'Tipo Contrato' in row[10]:
+                    prompt="El archivo csv se cargo exitosamente" 
+                    for column in csv.reader(io_string, delimiter=',', quotechar="|"):
+                        try:
+                            registro1=Instructores(
+                                Nombre = column[0],
+                                Apellido = column[1],
+                                TipoDocumento = column[2],
+                                NumeroDocumento = column[3],
+                                correoElectronico = column[8],
+                                numeroCelular = column[9],
+                                Fecha_Inicio = datetime.strptime(column[4], '%Y-%m-%d'),
+                                Fecha_Fin = datetime.strptime(column[5], '%Y-%m-%d'),
+                                supervisora = column[6],
+                                horasMensualFormacion = column[7],
+                                TipoDeContrato= column[10]
+                                )
+                            validacion=[column[0],column[1],column[3]]
+                            registro1.save()
+                        #En caso de que hayan registros repetidos
+                        except IntegrityError:
+                            aviso.append((validacion))
+                            prompt='Registros guardados, algunos registros ya existian y fueron evitados:' + str(aviso)
+                            continue
+                        #En caso de que la plantilla cuente con un solo registro
+                        except IndexError:
+                            prompt='Intente que la plantilla tenga mas de 1 registro'
+                            continue
 
-def editarInstructor(request):
-    template = "editarInstructor.html"
-##    instructor = Instructores.objects.filter(id=id_Instructor).first()
+                                 
+                                                             
+                    return render(request, template, {'prompt':prompt})
+
+
+   
+
+
+    return render(request, template, {"prompt":prompt})
+
+    
+def listaInstructores(request):
+    template='listarInstructor.html'
+    instructores=Instructores.objects.all()
+
+    return render(request, template, {"instructores" : instructores})
+
+
+
+# def editarInstructor(request, id):
+#     template='listarInstructor.html'
+#     if request.method == 'POST':
         
-    return render(request, template)
+
+
+    
+
+#     return render(request,template)
+    

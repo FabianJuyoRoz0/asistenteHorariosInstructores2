@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.FuncSprint1 import inicioSesion, instructor,cargarInstructorUnico,listarInstructor,Sena11,cargarFichas,cargarSemaforo,cargarProgramasFormacion, HorasInstructor,alertaFinalizacion
+from app1.FuncSprint1 import inicioSesion, instructor,cargarInstructorUnico,Sena11,cargarFichas,cargarSemaforo,cargarProgramasFormacion, HorasInstructor,alertaFinalizacion
 
 urlpatterns = [
     path('inicio/', inicioSesion.inicioSesion),
     path('admin/', admin.site.urls),
     path('CargarBDinicial/', instructor.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
-    path('ListarInstructor/', listarInstructor.listaInstructores),
-    path('ditarInstrucEtor/', instructor.editarInstructor, name='editarInstructor'),
+    path('ListarInstructor/', instructor.listaInstructores),
+    #path('EditarInstructor/<id>/', instructor.editarInstructor),
     path('CargarFichas/', cargarFichas.cargarFichasBD),
     path('CargarSemaforo/', cargarSemaforo.cargarSemaforoBD),
     path('CargarProgramas/', cargarProgramasFormacion.cargarProgramasBD),
-    path('HorasInstructor/', HorasInstructor.consultaHoras),
+    path('HorasInstructor/', HorasInstructor.obtenerHoras),
     path('AlertaFinalizacion/', alertaFinalizacion.alertayfinalizacion)
 ]
