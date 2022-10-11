@@ -22,11 +22,20 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('CargarBDinicial/', instructor.cargarBDinicial),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
+<<<<<<< HEAD
     path('ListarInstructor/', instructor.listaInstructores),
     #path('EditarInstructor/<id>/', instructor.editarInstructor),
+=======
+    path('ListarInstructor/', listarInstructor.listaInstructores),
+    path('EditarInstructor/', instructor.editarInstructor),
+>>>>>>> 8152977f0a761e9c3ec2c8cbb16a4849b89c8233
     path('CargarFichas/', cargarFichas.cargarFichasBD),
     path('CargarSemaforo/', cargarSemaforo.cargarSemaforoBD),
     path('CargarProgramas/', cargarProgramasFormacion.cargarProgramasBD),
     path('HorasInstructor/', HorasInstructor.obtenerHoras),
+<<<<<<< HEAD
     path('AlertaFinalizacion/', alertaFinalizacion.alertayfinalizacion)
+=======
+    path('AlertaFinalizacion/<int:id>/', alertaFinalizacion.alertayfinalizacion)
+>>>>>>> 8152977f0a761e9c3ec2c8cbb16a4849b89c8233
 ]

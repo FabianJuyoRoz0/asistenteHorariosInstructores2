@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Nombre,Apellido,Tipo de documento,Numero de identificacion,Fecha Inicio,Fecha Fin,Supervisor,Horas mensuales,Correo electrónico,Número celular,Tipo Contrato
 Nelson,Diaz,CC,1234567,2022-01-02,2022-01-11,Sandra Liliana,160,ngdiaz02@misena.edu.co,3162919901,True
 Esteban,Gonzalez,CC,12234567,2022-01-02,2022-01-11,Sandra Liliana,160,aa@misena.edu.co,3121323223,True
@@ -6,3 +7,22 @@ Marta,Ramirez,CC,111234567,2022-01-02,2022-01-11,Sandra Liliana,159,z@misena.edu
 Juan,Hernandez,CC,5234567,2022-01-02,2022-01-11,Sandra Liliana,181,y@misena.edu.co,1233223,True
 Pepito,Hernandez,CC,134567333,2022-01-02,2022-01-11,Sandra Liliana,470,f@misena.edu.co,6276223,True
 Nuevo,Registro,CC,02262001,2022-01-02,2022-01-11,Sandra Liliana,132,f@misena.edu.co,6276223,True
+=======
+﻿Nombre,Apellido,Tipo de documento,Numero de identificacion,Fecha Inicio,Fecha Fin,Supervisor,Horas mensuales,Correo electrónico,Número celular
+Nelson,Diaz,CC,1234567,2022-01-02,2022-01-11,Sandra Liliana,160,ngdiaz02@misena.edu.co,3162919901
+Darwin,Celis,CC,7654321,2022-01-02,2022-01-11,Sandra Liliana,132,darwin@sena.edu.co,325487455
+Oscar,Campos,CC,1478523,2022-01-02,2022-01-11,Daniel Perez,132,campososcar@gmail.com,987255665
+Ivon,Forero,CE,7412234,2022-01-02,2022-01-11,Daniel Perez,160,if5@outlook.com,3248299946
+Carlos,Gutierrez,CE,5547415,2022-01-02,2022-01-11,Yamile Espitia,160,cargut@gmail.com,259954566
+Gabriel,Hernandez,CC,6552114,2022-01-02,2022-01-11,Pedro Buitrago,160,gabhernandez@outlook.com,364488996
+Daniel,Jimenez,CC,4552115,2022-01-02,2022-01-11,Pedro Buitrago,160,123@outlook.com,123455666
+Fabian,Rozo,CC,12887242,2022-01-02,2022-01-11,Pedro Buitrago,160,777@gmail.com,6543210
+Carlos,Rozo,CC,7894562,2022-01-02,2022-01-11,Pedro Buitrago,160,777@gmail.com,6543210
+Manuel,Hernandez,CC,5551112,2022-01-02,2022-01-11,Pedro Buitrago,160,72@gmail.com,542131232
+Esteban,Hernandez,CC,2311123,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+Prueba,Repeticion,CC,2311123,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+Prueba,NoRepe,CC,26022001,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+Prueba2,Repe,CC,26022001,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+Prueba3,Repe,CC,26022001,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+Prueba2,NoRepe,CC,1111111,2022-01-02,2022-01-11,Pedro Buitrago,160,12331@gmail.com,4354312
+>>>>>>> 8152977f0a761e9c3ec2c8cbb16a4849b89c8233
