@@ -40,4 +40,8 @@ def cargarFichasBD(request):
             return render(request, template,{'prompt':prompt})
     return render(request, template,{'prompt':prompt})
     
+
+def progresoficha(request):
+    template="progresoFicha.html"
+    return render(request, template)
     

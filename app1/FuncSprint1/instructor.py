@@ -49,9 +49,10 @@ def cargarBDinicial(request):
                             continue
                         #En caso de que la plantilla cuente con un solo registro
                         except IndexError:
-                            prompt='Intente que la plantilla tenga mas de 1 registro'
+                            prompt='Utilice una plantilla con mas de un registro, el unico registro se guardo.'
                             continue
-
+                            
+                    
                                  
                                                              
                     return render(request, template, {'prompt':prompt})
@@ -70,10 +71,26 @@ def listaInstructores(request):
     return render(request, template, {"instructores" : instructores})
 
 
+def crearinstructorunico(request):
+    template='cargarInstructor.html'
+    
 
-# def editarInstructor(request, id):
-#     template='listarInstructor.html'
-#     if request.method == 'POST':
+
+
+
+
+
+
+    return render(request, template)
+
+
+def editarInstructor(request, id):
+    template='editarInstructor.html'
+    instructores=Instructores.objects.get(id=id)
+    data ={
+        "instructores" : instructores(instance=instructores)
+    }
+    return render(request,template)
         
 
 
