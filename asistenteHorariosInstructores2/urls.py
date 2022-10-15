@@ -21,7 +21,10 @@ from app1.FuncSprint1 import inicioSesion, instructor,cargarInstructorUnico,list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login_user', views.login_user, name='login_user'),
     path('login/', auth_views.LoginView.as_view(template_name="iniciosesion.html"), name='login'),
+    path('home/', views.home, name='home'),
+    path('logout_user', views.logout_user, name='logout_user'),
     path('CargarBDinicial/', views.cargarBDInicial, name='app1'),
     path('CargarInstructor/', cargarInstructorUnico.cargarInstructor),
     path('ListarInstructor/', listarInstructor.listaInstructores),

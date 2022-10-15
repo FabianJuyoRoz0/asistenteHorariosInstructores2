@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success header-nav">
+        <div class="col-lg-6 header-nav-menu">
+            <img class="icono" src="{% static 'imagenes/sena.png' %}" alt="Logo" class="d-inline-block align-top">
+            <a class="navbar-brand" href="{% url 'home' %}">Asistente Horarios</a>       
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {% if user.last_name == "1" %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Instructores
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/CargarBDinicial/">Cargar BD Instructores</a>
+                            <a class="dropdown-item" href="/CargarInstructor/">Buscar Instructor</a>
+                            <a class="dropdown-item" href="/ListarInstructor/">Listar Instructores</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Fichas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/CargarFichas/">Cargar Fichas</a>
+                            <a class="dropdown-item" href="/CargarSemaforo/">Orden Competencias</a>
+                            <a class="dropdown-item" href="/CargarProgramas/">Programas de formacion</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reportes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/HorasInstructor/">Horas de Instructor</a>
+                            <a class="dropdown-item" href="/AlertaFinalizacion/">Alertas y finalizacion</a>
+                            <a class="dropdown-item" href="/ProgresoFicha/">Progreso Ficha</a>
+                        </div>
+                    </li>  
+                    {% elif user.last_name == "2" %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reportes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/HorasInstructor/">Horas de Instructor</a>
+                            <a class="dropdown-item" href="/AlertaFinalizacion/">Alertas y finalizacion</a>
+                            <a class="dropdown-item" href="/ProgresoFicha/">Progreso Ficha</a>
+                        </div>
+                    </li> 
+                    {% endif %}                 
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6 header-nav-user">
+            <span>
+                {{user.first_name}}
+            </span>
+            <a href="{% url 'logout_user' %}">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+        </div>
+    </nav>

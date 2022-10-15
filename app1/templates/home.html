@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" >
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<title>Asistente Horarios</title>
+<!--Verificamos si el usuario está autenticado-->
+{% if user.is_authenticated %}
+{% include "header.html" %}
+
+<div class="container home-container">
+    <h2>Bienvenido {{user.first_name}}</h2>
+    <p>Seleccione alguna de las opciones del menú para comenzar</p>
+</div>
+<!--Si no está autenticado, se mostrará un mensaje al usuario para que inicie sesión-->
+{% else %}
+<div class="col-lg-12 no-authorized">
+    <h3>
+        No estás autorizado para ver esta página, por favor inicia sesión dando click al siguiente botón
+    </h3>
+</div>
+<div class="col-lg-12 no-authorized">
+    <a href="{% url 'login_user' %}">
+        <button type="button" class="btn bg-success">
+            Iniciar Sesion
+        </button>
+    </a>
+</div>
+{% endif %}
+<script src="{% static 'js/jquery.js' %}" ></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" ></script>
+</body>
+</html>

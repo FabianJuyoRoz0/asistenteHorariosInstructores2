@@ -13,6 +13,7 @@
 </head>
 <body>
     <div class="wrapper fadeInDown">
+      <h1>{{user.is_authenticated}}  {{user.first_name}}</h1>
       <form method="post" id="formContent">
         {% csrf_token %}
         <div class="fadeIn first">
@@ -27,7 +28,7 @@
         </div>
       </form>
     </div>
-     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}">
 
   </body>
 

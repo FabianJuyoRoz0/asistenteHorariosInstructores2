@@ -1,0 +1,17 @@
+.home-container {
+    margin-top: 20px;
+}
+
+.home-container p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.no-authorized {
+    text-align: center;
+}
+
+.no-authorized button {
+    margin-top: 30px;
+    color: white;
+}

@@ -1,0 +1,43 @@
+.header-nav {
+    margin-bottom: 30px;
+}
+
+.header-nav .header-nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-nav .header-nav-menu img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.header-nav .header-nav-menu a {
+    margin-right: 20px;
+}
+
+.header-nav .header-nav-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+}
+
+.header-nav .header-nav-user span,
+.header-nav .header-nav-user i {
+    margin-right: 20px;
+}
+
+.header-nav .header-nav-user span {
+    font-weight: bold;
+}
+
+.header-nav .header-nav-user i {
+    font-size: 25px;
+}
+
+.header-nav .header-nav-user a {
+    color: white;
+}
