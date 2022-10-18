@@ -1,69 +1,69 @@
 {% include "header.html" %}
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-<title>Editar/Buscar Instructor</title>
-
-
-
-
-
-
+<style>
+  h2 {
+    text-align: center;
+  }
+</style>
+<h2>Editar Instructor</h2>
+</style>
 <div class="container-sm">
-  <form action="/ListarInstructor/" method="GET">
-  <h3>Editar Instructor</h3>
-  <br>
+  
+  <form method="POST">
+    {% csrf_token %}
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="NumeroDocumento">Numero de documento</label>
-        <input type="text" class="form-control" id="NumeroDocumento" placeholder="Escriba su numero de documento..." name="NumeroDocumento">
+        <input type="text" class="form-control" id="NumeroDocumento" value={{instructor.NumeroDocumento}} name="NumeroDocumento">
       </div>
       <div class="form-group col-md-6">
         <label for="inputApellido">Apellido</label>
-        <input type="text" class="form-control" id="inputApellido" placeholder="Escriba su apellido" name="Apellido">
+        <input type="text" class="form-control" id="inputApellido" value='{{instructor.Apellido}}' name="Apellido">
       </div>
       <div class="form-group col-md-6">
         <label for="Nombre">Nombre</label>
-        <input type="text" class="form-control" id="Nombre" placeholder="Escriba su nombre" defaultValue="hi" name="Nombre">
+        <input type="text" class="form-control" id="Nombre" value='{{instructor.Nombre}}' name="Nombre">
       </div>
       <div class="form-group col-md-6">
         <label for="inputState">Tipo de documento</label>
         <select id="inputState" class="form-control" name="TipoDocumento">
-          <option selected></option>
-          <option>CC</option>
+          <option selected>{{instructor.TipoDocumento}}</option>
           <option>CE</option>
         </select>
     </div> 
 
     <div class="form-group col-md-6">
       <label for="inputText4">Telefono</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="Escriba su numero de telefono" name="numeroCelular">
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.numeroCelular}}' name="numeroCelular">
     </div>
 
     <div class="form-group col-md-6">
       <label for="inputText4">Correo Electronico</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="ejemplo@ejemplo.com">
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.correoElectronico}}' name="correoElectronico">
     </div>
 
 
     <div class="form-group col-md-6">
-      <label for="inputText4">Fecha Inicio</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="2022/30/02">
+      <label for="inputText4">Fecha Inicio (Año/Mes/Dia)</label>
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.Fecha_Inicio|date:'Y-m-d'}}' name="Fecha_Inicio">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputText4">Fecha Fin</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="2022/30/02">
+      <label for="inputText4">Fecha Fin (Año/Mes/Dia)</label>
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.Fecha_Fin|date:'Y-m-d'}}' name="Fecha_Fin">
     </div>
     <div class="form-group col-md-6">
       <label for="inputText4">Supervisor</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="Nombre de supervisor...">
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.supervisora}}' name="supervisora">
     </div>
     <div class="form-group col-md-6">
       <label for="inputText4">Horas Mensuales</label>
-      <input type="text" class="form-control" id="inputText4" placeholder="160">
+      <input type="text" class="form-control" id="inputText4" value='{{instructor.horasMensualFormacion}}' name="horasMensualFormacion">
+      <br>
     </div>
-    <button type="reset" class="btn btn-success" value="Limpiar">Limpiar</button>
+    <button type="submit" class="btn btn-success mr-4" value="Modificar">Modificar</button>
     <br>
-    <button type="submit" class="btn btn-success" value="Modificar">Modificar</button>
   </form>
 </div>
 </body>

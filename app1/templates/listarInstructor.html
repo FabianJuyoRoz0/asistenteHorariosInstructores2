@@ -14,6 +14,8 @@
 <h1>Instructores</h1>
 <div>
 <div class="form-group pull-right">
+<form method="GET">
+{% csrf_token %}
 <input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text" placeholder="Buscar..">
 </div>
 <div>
@@ -45,13 +47,14 @@
                 <td>{{instructor.Fecha_Fin}}</td>
                 <td>{{instructor.supervisora}}</td>
                 <td>{{instructor.horasMensualFormacion}}</td>
-                <td><a href="#" class="btn btn-success" href="/editarInstructor/">Editar</a>
-                <td><a href="#" class="btn btn-danger">Eliminar</a></td>               
+                <td><a class="btn btn-success" value="Editar" href="{% url 'editarinstructor' id=instructor.id %}">Editar</a>
+
+                <td><a class= "btn btn-danger" type="submit" href="{% url 'eliminarinstructor' id=instructor.id %}">Eliminar</a></td>                      
           {% endfor %}             
             </tr>          
         </tbody>
-    </table>
-    
+    </table>  
 </div>
+</form>
 </div>
 </div>

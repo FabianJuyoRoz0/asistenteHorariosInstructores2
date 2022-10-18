@@ -1,4 +1,27 @@
 {% include "header.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <title>Progreso Ficha</title>
+
+
+
+<style>
+    h1 {
+      text-align: center;
+    }
+</style>
+
+<h1>Escriba el numero de la ficha a consultar.</h1>
+<br>
+<br>
+<div class="container-sm" style="text-align: center;">
+  <form form action="" method="POST">
+      {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Numero de ficha: </label>
+      <input class="form-control" type="text" placeholder="5221441" name="text">
+      <small id="emailHelp" class="form-text text-muted">Escriba el numero sin puntos ni espacios.</small>
+    </div>
+      <button type="submit" class="btn btn-success">Consultar</button>
+      <br>
+    <br>
+    
