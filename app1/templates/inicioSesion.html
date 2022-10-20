@@ -1,36 +1,38 @@
+{% include "header.html" %}
+<style>
+  body{
+    background-color: rgb(240, 240, 240);}
+</style>
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-   <head>   
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" >
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link  rel="stylesheet" href="{% static 'css/inicioSesion.css'%}">
-    <title>Cargar BD Instructores</title>
-</head>
+
+
 <body>
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <div class="fadeIn first">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL2ajrhiKtmwAS62CIS-7dDdTKzFHkj9kdlevoY-A&s">
-      
-        </div>
-          <input type="text" id="login" class="fadeIn second" name="login" placeholder="usuario">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="contraseña">
-       
-          <a href="/CargarBDinicial/" class="btn btn-success">
-            <button class="btn btn-success">Ingresar</button>
-          </a>
-        <div id="formFooter">
-          <a class="underlineHover" href="#">Forgot Password?</a>
+  <form method="post" id="formContent">
+  {% csrf_token %}
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5" >
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Bienvenido</h5>
+            <form>
+              <div class="form-floating mb-3">
+                <input class="form-control" type="text" id="username" name="username" placeholder="Correo Electronico">
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+              </div>
+              <div class="d-grid text-center">
+              <a href="#">¿Olvido su contraseña?</a>
+            </div>
+              <div class="d-grid text-center mt-4" >
+                <button class="btn btn-success btn-login text-uppercase fw-bold" type="submit">Entrar</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}">
-
-  </body>
-
-</html>
+  </div>
+</form>
+</body>
