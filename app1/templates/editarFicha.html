@@ -1,0 +1,47 @@
+{% include "header.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<style>
+  h2 {
+    text-align: center;
+  }
+</style>
+<h2>Editar Fichas</h2>
+<br>
+<br>
+</style>
+<div class="container-sm">
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="ficha">Numero de ficha</label>
+        <input type="text" class="form-control" id="ficha" value={{ficha.ficha}} name="ficha">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputFechaInicioEtapaLectiva">Fecha Inicio Etapa Lectiva</label>
+        <input type="text" class="form-control" id="inputFechaInicioEtapaLectiva" value='{{ficha.FechaInicioEtapaLectiva|date:'Y-m-d'}}' name="FechaInicioEtapaLectiva">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="inputFechaFinEtapaLectiva">Fecha Inicio Etapa Lectiva</label>
+        <input type="text" class="form-control" id="inputFechaFinEtapaLectiva" value='{{ficha.FechaFinEtapaLectiva|date:'Y-m-d'}}' name="FechaFinEtapaLectiva">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="Jornada">Jornada</label>
+        <input type="text" class="form-control" id="Jornada" value={{ficha.Jornada}} name="Jornada">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="CantidadAprendices">Aprendices</label>
+        <input type="text" class="form-control" id="CantidadAprendices" value={{ficha.CantidadAprendices}} name="CantidadAprendices">
+        <br>
+    </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" value="Modificar">Modificar</button>
+  </form>
+
+</div>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ from pickle import GET
 from django.db import IntegrityError
 from django.http import request
 from django.shortcuts import get_object_or_404, render
-from app1.models import Instructores
+from app1.models import Instructores, fichasCaracterizacion
 import csv, io
 from django.contrib import messages
 from datetime import date, datetime
@@ -71,6 +71,15 @@ def listaInstructores(request):
     return render(request, template, contexto)
 
 
+def listaFichas(request):
+    template='listarFichas.html'
+    fichas=fichasCaracterizacion.objects.all()
+    contexto={"fichas" : fichas}
+    return render(request, template, contexto)
+
+
+
+
 def editarInstructor(request, id):
     instructor= Instructores.objects.get(id=id)
     template='editarInstructor.html'
@@ -102,6 +111,43 @@ def editarInstructor(request, id):
             contexto={"instructores" : instructores}
             return render(request, template2, contexto)
     return render(request,template,{"instructor": instructor})
+
+
+def editarFicha(request, id):
+    ficha= fichasCaracterizacion.objects.get(id=id)
+    template='editarFicha.html'
+    template2='listarFichas.html'
+    if request.method=="POST":
+            nombreficha = request.POST.get('ficha')
+            fechainicioficha = request.POST.get('FechaInicioEtapaLectiva')
+            fechafinficha= request.POST.get('FechaFinEtapaLectiva')
+            jornadaficha= request.POST.get('Jornada')
+            cantidadficha= request.POST.get('CantidadAprendices')
+            fichasCaracterizacion.objects.filter(id=id).update(
+                    ficha = nombreficha,
+                    FechaInicioEtapaLectiva = fechainicioficha,
+                    FechaFinEtapaLectiva = fechafinficha,
+                    Jornada = jornadaficha,
+                    CantidadAprendices = cantidadficha,)
+            template2='listarFichas.html'
+            fichas=fichasCaracterizacion.objects.all()
+            contexto={"fichas" : fichas}
+            return render(request, template2, contexto)
+    return render(request,template,{"ficha": ficha})
+
+
+def eliminarFicha(request,id):
+    ficha= fichasCaracterizacion.objects.get(id=id)
+    template='editarFicha.html'
+    template2='listarFichas.html'
+    if request.method=="GET":
+            fichasCaracterizacion.objects.filter(id=id).delete()
+            fichas=fichasCaracterizacion.objects.all()
+            contexto={"fichas" : fichas}
+            return render(request, template2, contexto)
+    return render(request,template,{"ficha": ficha})
+
+
 
 
  

@@ -1,0 +1,53 @@
+{% load static %}
+{% include "header.html" %}
+<title>Listar Fichas</title>
+
+
+
+
+<style>
+    h1 {
+      text-align: center;
+    }
+</style>
+
+<h1>Fichas</h1>
+<div>
+<div class="form-group pull-right">
+<form method="GET">
+{% csrf_token %}
+<input class="form-control col-md-3 light-table-filter" data-table="table table-striped" type="text" placeholder="Buscar..">
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ficha</th>
+                <th>Inicio Etapa</th>
+                <th>Fin Etapa</th>
+                <th>Jornada</th>
+                <th>Aprendices</th>
+                <th colspan="2">Opciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          {% for ficha in fichas %}
+            <tr>
+                <td>{{ficha.id}}</td>
+                <td>{{ficha.ficha}}</td>
+                <td>{{ficha.FechaInicioEtapaLectiva}}</td>
+                <td>{{ficha.FechaFinEtapaLectiva}}</td>
+                <td>{{ficha.Jornada}}</td> 
+                <td>{{ficha.CantidadAprendices}}</td>
+                <td><a class="btn btn-success" value="Editar" href="{% url 'editarficha' id=ficha.id %}">Editar</a>
+                <td><a class= "btn btn-danger" type="submit" href="{% url 'eliminarficha' id=ficha.id %}">Eliminar</a></td>    
+          {% endfor %} 
+            </tr>          
+        </tbody>
+    </table>  
+</div>
+</form>
+</div>
+</div>
