@@ -11,7 +11,7 @@ from datetime import date, datetime
 def cargarBDinicial(request):
     template = "CargarBD.html"
     aviso=[]
-    prompt = 'Ingrese el archivo .csv'
+    prompt = 'Solo formato .csv admitido'
     prompt2= 'Instructores repetidos: '
     render(request, template, {'prompt':prompt}) 
     #Validacion

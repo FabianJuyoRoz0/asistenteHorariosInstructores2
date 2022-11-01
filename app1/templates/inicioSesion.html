@@ -20,10 +20,23 @@
                 <input class="form-control" type="text" id="username" name="username" placeholder="Correo Electronico">
               </div>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+                <input type="password" class="form-control" id="password1" name="password" placeholder="Contraseña">
               </div>
               <div class="d-grid text-center">
               <a href="#">¿Olvido su contraseña?</a>
+              <br>
+              <br>
+              <input type="checkbox" onclick="myFunction()"> Mostrar Contraseña
+              <script>
+                function myFunction() {
+                var x = document.getElementById("password1");
+                if (x.type === "password") {
+                x.type = "text";
+                } else {
+                x.type = "password";
+                }
+                }
+              </script>
             </div>
               <div class="d-grid text-center mt-4" >
                 <button class="btn btn-success btn-login text-uppercase fw-bold" type="submit">Entrar</button>
