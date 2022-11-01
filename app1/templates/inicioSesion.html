@@ -14,7 +14,15 @@
 </head>
 <body>
     <div class="wrapper fadeInDown">
-    
+      
+
+      {% if form.errors %}
+
+      <div class="alert alert-danger" role="alert">
+          El usuario o la contraseña estan incorrectos por favor verifique
+      </div>
+      {% endif %}
+      
       <form method="post" id="formContent">
         {% csrf_token %}
         <div class="fadeIn first">

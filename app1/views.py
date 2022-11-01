@@ -13,3 +13,6 @@ def home(request):
 
 def cargarBDInicial(request):
     return render(request, 'cargarBD.html')
+
+def cargarSemaforo(request):
+    return render(request, 'cargarSemaforo.html')

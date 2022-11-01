@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login_user', views.login_user, name='login_user'),
     path('login/', auth_views.LoginView.as_view(template_name="iniciosesion.html"), name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('home/', views.home, name='home'),
     path('logout_user', views.logout_user, name='logout_user'),
     path('CargarBDinicial/', views.cargarBDInicial, name='app1'),
@@ -30,7 +31,7 @@ urlpatterns = [
     path('ListarInstructor/', listarInstructor.listaInstructores),
     path('EditarInstructor/', instructor.instructorPrueba.editarInstructor, name='editarInstructor'),
     path('CargarFichas/', cargarFichas.cargarFichasBD),
-    path('CargarSemaforo/', cargarSemaforo.cargarSemaforoBD),
+    path('CargarSemaforo/', views.cargarSemaforo, name="cargarSemaforo"),
     path('CargarProgramas/', cargarProgramasFormacion.cargarProgramasBD),
     path('HorasInstructor/', HorasInstructor.consultaHoras),
     path('AlertaFinalizacion/', alertaFinalizacion.alertayfinalizacion)

@@ -25,3 +25,22 @@ class fichasCaracterizacion(models.Model):
     FechaFinEtapaLectiva= models.DateField()
     Jornada= models.CharField(max_length=10)
     CantidadAprendices= models.IntegerField()
+    
+class semaforo(models.Model):
+    NoRafs= models.IntegerField(max_length=3)
+    HoraTotales =models.IntegerField(max_length=3)
+    I= models.IntegerField(max_length=3)
+    II=models.IntegerField(max_length=3)
+    III=models.IntegerField(max_length=3)
+    EP=models.IntegerField(max_length=3)
+    HorasTrimestreI=models.IntegerField(max_length=3)
+    HorasTrimestreII=models.IntegerField(max_length=3)
+    HorasTrimestreIII=models.IntegerField(max_length=3)
+    Total=models.IntegerField(max_length=3)
+    TotalHoraCompetencia=models.IntegerField(max_length=3)
+    ResultadoAprendizaje=models.IntegerField(max_length=3)
+    
+    
+    
+    
+    
