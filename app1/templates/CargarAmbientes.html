@@ -3,3 +3,48 @@
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <title>Cargar Ambientes</title>
 
+<style>
+    #completar{
+    margin-left: 45%;
+    }
+    h2{
+    text-align: center;
+    }
+</style>
+
+<h2>Cargar Ambientes</h2>
+<br>
+<br>
+<div class="container-sm">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nombredelambiente">Nombre del ambiente</label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nombredelambiente">Descripcion infraestructura</label>
+            <input type="text" class="form-control">
+          </div>
+      <div class="form-group col-md-6">
+          <label for="capacidadambiente">Capacidad del ambiente</label>
+          <input type="text" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+          <label for="tipodeambiente">Tipo de ambiente</label>
+          <input type="text" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputState">Cordinacion</label>
+        <select id="inputState" class="form-control" name="TipoDocumento">
+          <option>Seleccione cordinacion...</option>
+        </select>
+    </div> 
+      </div>
+      <br>
+      <button type="submit" id="completar" class="btn btn-success" value="Completar">Completar</button>
+    </form>
+    </form>
+
+    
