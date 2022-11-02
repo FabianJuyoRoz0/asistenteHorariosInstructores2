@@ -21,6 +21,8 @@ urlpatterns = [
     path('inicio/', inicioSesion.inicioSesion),
     path('admin/', admin.site.urls),
     path('CargarBDinicial/', instructor.cargarBDinicial),
+    path('CargarCordinacion/', instructor.cargarCordinacion),
+    path('CargarAmbientes/', instructor.cargarAmbientes),
     path('BuscarInstructor/', instructor.buscarInstructores),
     path('ListarInstructor/', instructor.listaInstructores),
     path('ListarFichas/', instructor.listaFichas),

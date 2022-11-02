@@ -8,6 +8,18 @@ from django.contrib import messages
 from datetime import date, datetime
 
 
+
+def cargarCordinacion(request):
+    template="CargarCordinacion.html"
+    return render(request,template)
+
+
+def cargarAmbientes(request):
+    template="CargarAmbientes.html"
+    return render(request,template)
+
+
+
 def cargarBDinicial(request):
     template = "CargarBD.html"
     aviso=[]
