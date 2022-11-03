@@ -285,15 +285,15 @@ margin-top: 50px;
    /* grid-template-columns: 20px  20px 20px;*/
     /*grid-template-rows: 20px 20px 20px ;*/
     width: 100%;
-    gap: 20px;
-    width: 70%;
+    gap: 10px;
     text-align: center;
-    justify-content: center;
+    justify-content: centerd;
 }
 .box-1{
-  background-color: #ffffff;
+background-color: #ffffff;
 width: 300px;   
 height: 100px;
+font-size: 25px;
 
 }
 
@@ -309,4 +309,7 @@ height: 100px;
  width: 300px;
   height: 100px;
  
+}
+.fa-solid {
+font-size: 45px;
 }
