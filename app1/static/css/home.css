@@ -1,3 +1,10 @@
+
+body {
+    background-image: url("../imagenes/Auditorio\ \(1\).JPG.crdownload");
+    background-repeat: no-repeat;
+    background-size:cover;
+   
+   }
 .home-container {
     margin-top: 20px;
 }

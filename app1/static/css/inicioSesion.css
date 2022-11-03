@@ -1,18 +1,23 @@
-html{
-  background-color:#9DC18E;
-}
 
 body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-  background-color:#9DC18E;
+ background-image: url("../imagenes/administración\ 1\ \(1\).jpg");
+ background-repeat: no-repeat;
+ background-size:cover;
+
+}
+.icono{
+
+  width: 60px;
 }
 
 a {
-  color: #92badd;
+  
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
+}
+a:hover{
+  color:#9DC18E
 }
 
 h2 {
@@ -25,15 +30,32 @@ h2 {
   color: #cccccc;
 }
 
+.header-nav {
+  margin-bottom: 30px;
+  text-align: center;
+
+  
+}
+
+.header-nav .header-nav-menu {
+  display: flex;
+  flex-direction: row;
+}
+.header-nav .header-nav-menu a {
+  margin-right: 20px;
+  word-spacing: 20px;
+
+}
 
 .wrapper {
+  
   display: flex;
   align-items: center;
   flex-direction: column; 
-  justify-content: center;
+  justify-content:center;
   width: 100%;
-  min-height: 100%;
-  padding: 20px;
+  height: 22%;
+  padding: 80px;
 }
 
 #formContent {
@@ -255,4 +277,36 @@ input[type=text]:placeholder {
 
 #icon {
   width:60%;
+}
+.box{
+margin-top: 50px;
+    display:grid;
+   grid-template-columns: repeat(3,1fr);
+   /* grid-template-columns: 20px  20px 20px;*/
+    /*grid-template-rows: 20px 20px 20px ;*/
+    width: 100%;
+    gap: 20px;
+    width: 70%;
+    text-align: center;
+    justify-content: center;
+}
+.box-1{
+  background-color: #ffffff;
+width: 300px;   
+height: 100px;
+
+}
+
+.box-2{
+  background-color: #ffffff;
+ width: 300px;
+ height:100px;
+
+ 
+}
+.box-3{
+  background-color: #ffffff;
+ width: 300px;
+  height: 100px;
+ 
 }
